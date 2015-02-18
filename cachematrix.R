@@ -1,7 +1,8 @@
 ## Those two functions are designed to ofload CPU. 
 ## To decreas the time required to obtain desired result, in this case inverse of matrix
 
-## This function is creating a special list
+## This function is creating a special list. The list containe for vaues : 
+##get and set (matrix) and get and set(inverse of matrix - in this case solve)
 makeCacheMatrix <- function(x = matrix()) {
         s <- NULL
         set <- function(y) {
@@ -9,12 +10,12 @@ makeCacheMatrix <- function(x = matrix()) {
                 s <<- NULL
         }
         get <- function() x
-        setmean <- function(solve) s <<- solve
-        getmean <- function() s
+        setsolve <- function(solve) s <<- solve
+        getsolve <- function() s
         list(set = set, get = get,
-             setmean = setmean,
-             getmean = getmean)
-
+             setsolve = setsolve,
+             getsolve = getsolve)
+        
 }
 
 
